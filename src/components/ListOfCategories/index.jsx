@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Category } from '../Category'
 import { Item, List } from './styles'
 
-
-const useCategoriesData = () =>{
+const useCategoriesData = () => {
   const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -11,11 +10,11 @@ const useCategoriesData = () =>{
     setLoading(true)
     const url = 'https://petgram-server-traka-2fhrhuzjx-traka-dev.vercel.app/categories'
     window.fetch(url)
-    .then(res => res.json())
-    .then(response => {
-      setCategories(response)
-      setLoading(false)
-    })
+      .then(res => res.json())
+      .then(response => {
+        setCategories(response)
+        setLoading(false)
+      })
   }, [])
 
   return { categories, loading }
@@ -39,12 +38,12 @@ export const ListOfCategories = () => {
   const renderList = (fixed) => (
     <List fixed={fixed}>
       {loading
-      ? <Item key='loading'><Category /></Item>
-      :categories.map((category) => (
-        <Item key={category.id}>
-          <Category {...category} />
-        </Item>
-      ))}
+        ? <Item key='loading'><Category /></Item>
+        : categories.map((category) => (
+          <Item key={category.id}>
+            <Category {...category} />
+          </Item>
+        ))}
     </List>
   )
   return (

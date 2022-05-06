@@ -6,7 +6,8 @@
     "scripts": {
         "build": "webpack --mode=production",
         "lint": "standard",
-        "dev": "webpack-dev-server  --mode=development"
+        "dev": "webpack-dev-server  --mode=development",
+        "fix": "standard --fix"
     },
     "repository": {
         "type": "git",

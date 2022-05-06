@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { fadeIn } from '../../styles/animation'
 
-export const List = styled.ul `
+export const List = styled.ul`
     display: flex;
     overflow: scroll;
     padding-inline: 10px;
@@ -25,6 +25,6 @@ export const List = styled.ul `
     `}    
 `
 
-export const Item = styled.li `
+export const Item = styled.li`
     padding: 0 8px;
 `
