@@ -1,10 +1,10 @@
-import React from "react";
-import { ListOfCategories } from "./components/ListOfCategories";
-import { GlobalStyles } from "./GlobalStyles";
+import React from 'react'
+import { ListOfCategories } from './components/ListOfCategories'
+import { GlobalStyles } from './GlobalStyles'
 
 export const App = () => (
-    <>
-        <GlobalStyles />
-        <ListOfCategories />
-    </>
-);
+  <>
+    <GlobalStyles />
+    <ListOfCategories />
+  </>
+)

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Image, Anchor} from './styles'
+import { Image, Anchor } from './styles'
 
 const DEDAULT_IMG = 'https://i-imgur.com/dJa0Hpl.jpg'
 
