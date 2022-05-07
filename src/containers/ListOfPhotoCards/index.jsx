@@ -1,8 +1,8 @@
 import React from 'react'
-import { Photocard } from '../../components/PhotoCard'
+import { PhotoCard } from '../../components/PhotoCard'
 import { useQuery, gql } from '@apollo/client'
 
-const whitPhotos = gql`
+const GET_PHOTOS = gql`
   query getPhotos($categoryId: ID) {
     photos(categoryId: $categoryId) {
       id
@@ -16,7 +16,7 @@ const whitPhotos = gql`
 `
 
 export const ListOfPhotoCards = ({ categoryId }) => {
-  const { loading, error, data } = useQuery(whitPhotos, { variables: { categoryId } })
+  const { loading, error, data } = useQuery(GET_PHOTOS, { variables: { categoryId } })
 
   if (error) {
     return <h2>Internal Server Error</h2>
@@ -27,7 +27,7 @@ export const ListOfPhotoCards = ({ categoryId }) => {
 
   return (
     <ul>
-      {data.photos.map(item => <Photocard key={item.id} {...item} />)}
+      {data.photos.map(item => <PhotoCard key={item.id} {...item} />)}
     </ul>
   )
 }

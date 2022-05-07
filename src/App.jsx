@@ -8,7 +8,6 @@ import { PhotoCardWhitDetails } from './containers/PhotoCarWithDetails'
 export const App = () => {
   const urlParams = new window.URLSearchParams(window.location.search)
   const detailId = urlParams.get('detail')
-  console.dir(detailId)
   return (
     <>
       <GlobalStyles />
