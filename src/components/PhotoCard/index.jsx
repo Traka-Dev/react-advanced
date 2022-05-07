@@ -19,7 +19,7 @@ export const Photocard = ({ id, likes = 0, src = DEFAULT_IMG }) => {
         <>
           <a href={`/detail/${id}`}>
             <ImgWrapper>
-              <Img src={DEFAULT_IMG} />
+              <Img src={src} />
             </ImgWrapper>
           </a>
           <Button onClick={() => setLiked(!liked)}>
