@@ -1,27 +1,23 @@
-import React from 'react'
-import { ListOfCategories } from './components/ListOfCategories'
-import { ListOfPhotoCards } from './containers/ListOfPhotoCards'
-import { Logo } from './components/Logo'
-import { GlobalStyles } from './styles/GlobalStyles'
-import { PhotoCardWhitDetails } from './containers/PhotoCarWithDetails'
+import React from "react";
+import { Logo } from "./components/Logo";
+import { GlobalStyles } from "./styles/GlobalStyles";
+import { PhotoCardWhitDetails } from "./containers/PhotoCarWithDetails";
+import { Home } from "./Pages/Home";
+import { Router } from "@reach/router";
+import { Detail } from "./Pages/Detail";
+import { Navbar } from "./components/Navbar";
 
 export const App = () => {
-  const urlParams = new window.URLSearchParams(window.location.search)
-  const detailId = urlParams.get('detail')
-  return (
-    <>
-      <GlobalStyles />
-      <Logo />
-      {detailId
-        ? (
-          <PhotoCardWhitDetails id={detailId} />
-          )
-        : (
-          <>
-            <ListOfCategories />
-            <ListOfPhotoCards categoryId={2} />
-          </>
-          )}
-    </>
-  )
-}
+    return (
+        <>
+            <GlobalStyles />
+            <Logo />
+            <Router>
+                <Home path="/" />
+                <Home path="/pet/:id" />
+                <Detail path='/detail/:detailId'/>                
+            </Router>
+            <Navbar />
+        </>
+    );
+};
