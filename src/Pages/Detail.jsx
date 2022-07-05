@@ -1,8 +1,11 @@
-import React from 'react'
-import { PhotoCardWhitDetails } from '../containers/PhotoCarWithDetails'
+import React from "react";
+import { PhotoCardWhitDetails } from "../containers/PhotoCarWithDetails";
+import { Layout } from "../components/Layout";
 
 export const Detail = ({ detailId }) => {
-  return (
-    <PhotoCardWhitDetails id={detailId} />
-  )
-}
+    return (
+        <Layout title={`Fotografía ${detailId}`}>
+            <PhotoCardWhitDetails id={detailId} />
+        </Layout>
+    );
+};
