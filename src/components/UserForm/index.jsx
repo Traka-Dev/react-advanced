@@ -1,8 +1,9 @@
 import React from "react";
 import { useInputValue } from "../../hooks/useInputValue";
-import { Form, Input, Button, Title, Error } from "./styles";
+import { Form, Input, Title, Error } from "./styles";
+import { SubmitButton } from '../SubmitButton'
 
-export const UserForm = ({ onSubmit, title, error, disabled }) => {
+export const UserForm = ({ onSubmit, title, disabled, error }) => {
     const email = useInputValue("");
     const password = useInputValue("");
 
@@ -10,8 +11,6 @@ export const UserForm = ({ onSubmit, title, error, disabled }) => {
         e.preventDefault();
         onSubmit({ email: email.value, password: password.value });
     };
-
-    const errorMsg = error && "El usuario ya existe o hay algún problema.";
 
     return (
         <>
@@ -24,9 +23,9 @@ export const UserForm = ({ onSubmit, title, error, disabled }) => {
                     type="password"
                     {...password}
                 />
-                <Button disabled={disabled}>{title}</Button>
+                <SubmitButton disabled={disabled}>{title}</SubmitButton>
             </Form>
-            {error && <Error>{errorMsg}</Error>}
+            {error && <Error>{error}</Error>}
         </>
     );
 };
