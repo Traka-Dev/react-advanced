@@ -7,7 +7,8 @@
         "build": "webpack --mode=production",
         "lint": "standard",
         "dev": "webpack-dev-server  --mode=development  --history-api-fallback",
-        "fix": "standard --fix"
+        "fix": "standard --fix",
+        "serve:dev": "webpack --mode=development && npx serve dist -s"
     },
     "repository": {
         "type": "git",
